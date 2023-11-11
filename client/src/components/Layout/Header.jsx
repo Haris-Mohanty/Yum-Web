@@ -1,8 +1,9 @@
 import React from "react";
-import { AppBar, Box, Toolbar, Typography } from "@mui/material";
+import { AppBar, Box, IconButton, Toolbar, Typography } from "@mui/material";
 import { Link } from "react-router-dom";
 import logo from "../../Assets/logo.png";
 import "../../styles/HeaderStyles.css";
+import MenuIcon from "@mui/icons-material/Menu";
 
 const Header = () => {
   return (
@@ -15,6 +16,18 @@ const Header = () => {
               <Link to={"/"}>
                 <img src={logo} alt="Logo" width={"100%"} />
               </Link>
+            </Box>
+
+            {/********** Hamburger icon form small screen **********/}
+            <Box
+              sx={{
+                display: { xs: "block", sm: "block", md: "none" },
+                ml: "auto",
+              }}
+            >
+              <IconButton color="inherit" aria-label="menu">
+                <MenuIcon />
+              </IconButton>
             </Box>
 
             {/* NAV MENU */}
