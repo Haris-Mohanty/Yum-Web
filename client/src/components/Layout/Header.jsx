@@ -11,7 +11,7 @@ const Header = () => {
         <AppBar component={"nav"} sx={{ bgcolor: "#B2BEB5" }}>
           <Toolbar>
             {/* LOGO */}
-            <Box width={"9%"} ml={2}>
+            <Box width={"10%"} ml={2}>
               <Link to={"/"}>
                 <img src={logo} alt="Logo" width={"100%"} />
               </Link>

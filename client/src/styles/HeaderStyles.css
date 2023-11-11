@@ -8,9 +8,10 @@
 .nav-menu li {
   margin: 0 1.5rem;
   font-size: 1.2rem;
-
 }
 
-.nav-menu li a{
-    text-decoration: none;
+.nav-menu li a {
+  color: #006666;
+  text-decoration: none;
+  font-weight: bold;
 }
