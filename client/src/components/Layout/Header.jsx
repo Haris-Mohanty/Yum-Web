@@ -1,11 +1,24 @@
-import React from 'react'
+import React from "react";
+import { AppBar, Box, Toolbar, Typography } from "@mui/material";
+import { Link } from "react-router-dom";
+import logo from "../../Assets/logo.png";
 
 const Header = () => {
   return (
     <>
-      <h1>Header</h1>
+      <Box>
+        <AppBar component={"nav"} sx={{ bgcolor: "black" }}>
+          <Toolbar>
+            <Box>
+              <Link to={"/"}>
+                <img src={logo} alt="Logo" />
+              </Link>
+            </Box>
+          </Toolbar>
+        </AppBar>
+      </Box>
     </>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;
