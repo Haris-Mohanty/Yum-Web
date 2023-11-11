@@ -1,18 +1,30 @@
-import React from "react";
-import { AppBar, Box, IconButton, Toolbar, Typography } from "@mui/material";
+import React, { useState } from "react";
+import {
+  AppBar,
+  Box,
+  IconButton,
+  Toolbar,
+  useMediaQuery,
+  useTheme,
+} from "@mui/material";
 import { Link } from "react-router-dom";
 import logo from "../../Assets/logo.png";
 import "../../styles/HeaderStyles.css";
 import MenuIcon from "@mui/icons-material/Menu";
 
 const Header = () => {
+  const theme = useTheme();
+  const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm"));
+
+  const [toggler, setToggler] = useState(false);
+
   return (
     <>
       <Box>
         <AppBar component={"nav"} sx={{ bgcolor: "#B2BEB5" }}>
           <Toolbar>
             {/* LOGO */}
-            <Box width={"10%"} ml={2}>
+            <Box width={isSmallScreen ? "33%" : "10%"} ml={2}>
               <Link to={"/"}>
                 <img src={logo} alt="Logo" width={"100%"} />
               </Link>
@@ -25,8 +37,10 @@ const Header = () => {
                 ml: "auto",
               }}
             >
-              <IconButton color="inherit" aria-label="menu">
-                <MenuIcon />
+              <IconButton aria-label="menu">
+                <MenuIcon
+                  sx={{ fontSize: 35, color: "#006666", fontWeight: "bold" }}
+                />
               </IconButton>
             </Box>
 
