@@ -2,7 +2,11 @@ import React, { useState } from "react";
 import {
   AppBar,
   Box,
+  Drawer,
   IconButton,
+  List,
+  ListItem,
+  ListItemText,
   Toolbar,
   useMediaQuery,
   useTheme,
@@ -18,6 +22,11 @@ const Header = () => {
 
   const [toggler, setToggler] = useState(false);
 
+  //Handle menu click
+  const HandleDrawerToggle = () => {
+    setToggler(!toggler);
+  };
+
   return (
     <>
       <Box>
@@ -31,15 +40,20 @@ const Header = () => {
             </Box>
 
             {/********** Hamburger icon form small screen **********/}
+
             <Box
               sx={{
                 display: { xs: "block", sm: "block", md: "none" },
                 ml: "auto",
               }}
             >
-              <IconButton aria-label="menu">
+              <IconButton aria-label="menu" onClick={HandleDrawerToggle}>
                 <MenuIcon
-                  sx={{ fontSize: 35, color: "#006666", fontWeight: "bold" }}
+                  sx={{
+                    fontSize: 35,
+                    color: "#006666",
+                    fontWeight: "bold",
+                  }}
                 />
               </IconButton>
             </Box>
@@ -66,6 +80,30 @@ const Header = () => {
             </Box>
           </Toolbar>
         </AppBar>
+        {/* SMALL DEVIDE SHOW DRAWER */}
+        <Drawer
+          anchor="right"
+          open={toggler}
+          onClose={HandleDrawerToggle}
+          sx={{
+            display: { xs: "block", sm: "block", md: "none" },
+          }}
+        >
+          <List>
+            <ListItem component={Link} to="/" sx={{ color: "#006666" }}>
+              <ListItemText primary="Home" />
+            </ListItem>
+            <ListItem component={Link} to="/menu" sx={{ color: "#006666" }}>
+              <ListItemText primary="Menu" />
+            </ListItem>
+            <ListItem component={Link} to="/about" sx={{ color: "#006666" }}>
+              <ListItemText primary="About" />
+            </ListItem>
+            <ListItem component={Link} to="/contact" sx={{ color: "#006666" }}>
+              <ListItemText primary="Contact" />
+            </ListItem>
+          </List>
+        </Drawer>
       </Box>
     </>
   );
