@@ -32,7 +32,7 @@ const Header = () => {
       <Box>
         <AppBar component={"nav"} sx={{ bgcolor: "#B2BEB5" }}>
           <Toolbar>
-            {/* LOGO */}
+            {/************** LOGO ***************/}
             <Box width={isSmallScreen ? "33%" : "10%"} ml={2}>
               <Link to={"/"}>
                 <img src={logo} alt="Logo" width={"100%"} />
@@ -40,7 +40,6 @@ const Header = () => {
             </Box>
 
             {/********** Hamburger icon form small screen **********/}
-
             <Box
               sx={{
                 display: { xs: "block", sm: "block", md: "none" },
@@ -58,7 +57,7 @@ const Header = () => {
               </IconButton>
             </Box>
 
-            {/* NAV MENU */}
+            {/*********************** NAV MENU ITEMS *********************/}
             <Box
               ml={"auto"}
               sx={{ display: { xs: "none", sm: "none", md: "block" } }}
@@ -80,7 +79,8 @@ const Header = () => {
             </Box>
           </Toolbar>
         </AppBar>
-        {/* SMALL DEVIDE SHOW DRAWER */}
+
+        {/***************** SMALL DEVIDE SHOW DRAWER **************/}
         <Drawer
           anchor="right"
           open={toggler}
@@ -89,17 +89,33 @@ const Header = () => {
             display: { xs: "block", sm: "block", md: "none" },
           }}
         >
-          <List>
-            <ListItem component={Link} to="/" sx={{ color: "#006666" }}>
+          <List sx={{ width: "120px" }}>
+            <ListItem
+              component={Link}
+              to="/"
+              sx={{ color: "#006666", textAlign: "center" }}
+            >
               <ListItemText primary="Home" />
             </ListItem>
-            <ListItem component={Link} to="/menu" sx={{ color: "#006666" }}>
+            <ListItem
+              component={Link}
+              to="/menu"
+              sx={{ color: "#006666", textAlign: "center" }}
+            >
               <ListItemText primary="Menu" />
             </ListItem>
-            <ListItem component={Link} to="/about" sx={{ color: "#006666" }}>
+            <ListItem
+              component={Link}
+              to="/about"
+              sx={{ color: "#006666", textAlign: "center" }}
+            >
               <ListItemText primary="About" />
             </ListItem>
-            <ListItem component={Link} to="/contact" sx={{ color: "#006666" }}>
+            <ListItem
+              component={Link}
+              to="/contact"
+              sx={{ color: "#006666", textAlign: "center" }}
+            >
               <ListItemText primary="Contact" />
             </ListItem>
           </List>
