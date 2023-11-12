@@ -19,7 +19,7 @@ const Footer = () => {
           padding: 2,
         }}
       >
-        <Typography variant={isSmallScreen ? "h7" : "h5"}>
+        <Typography variant={isSmallScreen ? "subtitle1" : "h5"}>
           All Rights Reserved &copy; Haris Mohanty!
         </Typography>
         <Box
