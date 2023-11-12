@@ -10,7 +10,7 @@ const Home = () => {
         <Box>
           <Typography variant="h5">Food Website</Typography>
           <Typography variant="subtitle1">Best Food In India!</Typography>
-          <Link>
+          <Link to={"/menu"}>
             <Button>Order Now</Button>
           </Link>
         </Box>
