@@ -9,23 +9,31 @@ const Home = () => {
     <Layout>
       <Box
         sx={{
-          m: "4rem 0 0 0",
+          mt: 7,
           backgroundImage: `url(${Banner})`,
-          height: "90vh",
-          display:"flex",
-          justifyContent:'center',
-          alignItems:"center"
+          height: "92vh",
+          display: "flex",
+          justifyContent: "start",
+          alignItems: "center",
+          backgroundSize: "cover",
         }}
       >
-        <Box>
-          <Typography variant="h5">Food Website</Typography>
-          <Typography variant="subtitle1">Best Food In India!</Typography>
+        <Box sx={{ ml: 4, p: 4 }}>
+          <Typography
+            variant="h4"
+            sx={{ fontWeight: "bold", color: "#006666", fontFamily:"verdana" }}
+          >
+            Food Website
+          </Typography>
+          <Typography variant="h6" sx={{ml:5}}>Best Food In India!</Typography>
           <Link to={"/menu"}>
             <Button
               variant="contained"
               color="primary"
               size="large"
               sx={{
+                mt: 2,
+                ml:7,
                 borderRadius: 2,
                 backgroundColor: "#006666",
                 boxShadow: "0 4px 8px rgba(0, 102, 102, 0.5)",
