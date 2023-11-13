@@ -1,26 +1,29 @@
 import React from "react";
 import Layout from "../components/Layout/Layout";
-import { Box, Typography } from "@mui/material";
+import { Box, Typography, useMediaQuery, useTheme } from "@mui/material";
 
 const About = () => {
+  const theme = useTheme();
+  const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm"));
+
   return (
     <Layout>
       <Box sx={{ mt: 7, p: 5 }}>
         <Typography
-          variant="h3"
+          variant={isSmallScreen ? "h6" : "h3"}
           sx={{
             textAlign: "center",
             mb: 4,
             fontFamily: "verdana",
             fontWeight: "bold",
             color: "#006666",
-            letterSpacing:1
+            letterSpacing: 1,
           }}
         >
           Welcome to Our website!
         </Typography>
         <Typography
-          variant="h6"
+          variant={isSmallScreen ? "subtitle1" : "h6"}
           sx={{ mb: 2, fontFamily: "popins", color: "#006666" }}
         >
           Welcome to Yum Web, where we believe that every meal should be an
@@ -29,7 +32,7 @@ const About = () => {
           seamless and delightful food ordering.
         </Typography>
         <Typography
-          variant="h6"
+          variant={isSmallScreen ? "subtitle1" : "h6"}
           sx={{ mb: 2, fontFamily: "popins", color: "#006666" }}
         >
           At Yum Web, our mission is simple: to connect food lovers with the
@@ -38,7 +41,7 @@ const About = () => {
           and we strive to make that joy accessible to everyone.
         </Typography>
         <Typography
-          variant="h6"
+          variant={isSmallScreen ? "subtitle1" : "h6"}
           sx={{ mb: 2, fontFamily: "popins", color: "#006666" }}
         >
           Your satisfaction is our priority. We partner with reputable
@@ -47,7 +50,7 @@ const About = () => {
           ensure that every step of the process is seamless and reliable.
         </Typography>
         <Typography
-          variant="h6"
+          variant={isSmallScreen ? "subtitle1" : "h6"}
           sx={{ mb: 2, fontFamily: "popins", color: "#006666" }}
         >
           Embark on a culinary journey with Yum Web, and discover the joy of
@@ -57,7 +60,7 @@ const About = () => {
           love.
         </Typography>
         <Typography
-          variant="h6"
+          variant={isSmallScreen ? "subtitle1" : "h6"}
           sx={{
             mb: 2,
             textAlign: "center",
