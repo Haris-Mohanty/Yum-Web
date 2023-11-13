@@ -2,6 +2,9 @@ import React from "react";
 import Layout from "../components/Layout/Layout";
 import { Box, Typography, useMediaQuery, useTheme } from "@mui/material";
 import logo from "../Assets/logo1.png";
+import RestaurantMenuIcon from "@mui/icons-material/RestaurantMenu";
+import RestaurantIcon from "@mui/icons-material/Restaurant";
+import TapasIcon from "@mui/icons-material/Tapas";
 
 const About = () => {
   const theme = useTheme();
@@ -10,7 +13,7 @@ const About = () => {
   return (
     <Layout>
       <Box sx={{ mt: 7, p: 5 }}>
-        <Box sx={{width:"50%"}}>
+        <Box sx={{ width: "47%", m: "auto" }}>
           <img src={logo} alt="Logo of YumWeb" height={"100%"} width={"100%"} />
         </Box>
         <Typography
@@ -18,6 +21,7 @@ const About = () => {
           sx={{
             textAlign: "center",
             mb: 4,
+            mt: 5,
             fontFamily: "verdana",
             fontWeight: "bold",
             color: "#006666",
@@ -44,18 +48,10 @@ const About = () => {
           doorstep. We understand the joy that comes from a well-prepared meal,
           and we strive to make that joy accessible to everyone.
         </Typography>
+
         <Typography
           variant={isSmallScreen ? "subtitle1" : "h6"}
-          sx={{ mb: 2, fontFamily: "popins", color: "#006666" }}
-        >
-          Your satisfaction is our priority. We partner with reputable
-          restaurants known for their commitment to quality and freshness. From
-          the moment you place an order to the time it reaches your doorstep, we
-          ensure that every step of the process is seamless and reliable.
-        </Typography>
-        <Typography
-          variant={isSmallScreen ? "subtitle1" : "h6"}
-          sx={{ mb: 2, fontFamily: "popins", color: "#006666" }}
+          sx={{ fontFamily: "popins", color: "#006666" }}
         >
           Embark on a culinary journey with Yum Web, and discover the joy of
           good food without the hassle. We invite you to join our growing
@@ -63,19 +59,41 @@ const About = () => {
           flavor, convenience, and the joy of sharing great food with those you
           love.
         </Typography>
-        <Typography
-          variant={isSmallScreen ? "subtitle1" : "h6"}
-          sx={{
-            mb: 2,
-            textAlign: "center",
-            fontWeight: "bold",
-            color: "#006666",
-          }}
-        >
-          Thank you for choosing Yum Web. Let's eat, enjoy, and savor the
-          moments together!
-        </Typography>
       </Box>
+      <Box
+        sx={{
+          mb:1,
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          "& svg": {
+            fontSize: "35px",
+            cursor: "pointer",
+            mr: 2,
+          },
+          "& svg:hover": {
+            color: "#004c4c",
+            transform: "scale(1.4)",
+            transition: "all 400ms linear",
+          },
+        }}
+      >
+        <RestaurantMenuIcon />
+        <RestaurantIcon />
+        <TapasIcon />
+      </Box>
+      <Typography
+        variant={isSmallScreen ? "subtitle1" : "h6"}
+        sx={{
+          mb: 2,
+          textAlign: "center",
+          fontWeight: "bold",
+          color: "#006666",
+        }}
+      >
+        Thank you for choosing Yum Web. Let's eat, enjoy, and savor the moments
+        together!
+      </Typography>
     </Layout>
   );
 };
