@@ -1,6 +1,7 @@
 import React from "react";
 import Layout from "../components/Layout/Layout";
 import { Box, Typography, useMediaQuery, useTheme } from "@mui/material";
+import logo from "../Assets/logo1.png";
 
 const About = () => {
   const theme = useTheme();
@@ -9,6 +10,9 @@ const About = () => {
   return (
     <Layout>
       <Box sx={{ mt: 7, p: 5 }}>
+        <Box sx={{width:"50%"}}>
+          <img src={logo} alt="Logo of YumWeb" height={"100%"} width={"100%"} />
+        </Box>
         <Typography
           variant={isSmallScreen ? "h6" : "h3"}
           sx={{
