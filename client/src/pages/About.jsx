@@ -13,11 +13,16 @@ const About = () => {
   return (
     <Layout>
       <Box sx={{ mt: 7, p: 5 }}>
-        <Box sx={{ width: "47%", m: "auto" }}>
+        <Box
+          sx={{
+            width: isSmallScreen ? "75%" : "43%",
+            m: isSmallScreen ? 2 : "auto",
+          }}
+        >
           <img src={logo} alt="Logo of YumWeb" height={"100%"} width={"100%"} />
         </Box>
         <Typography
-          variant={isSmallScreen ? "h6" : "h3"}
+          variant={isSmallScreen ? "h5" : "h3"}
           sx={{
             textAlign: "center",
             mb: 4,
@@ -62,7 +67,7 @@ const About = () => {
       </Box>
       <Box
         sx={{
-          mb:1,
+          mb: 1,
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
@@ -78,14 +83,15 @@ const About = () => {
           },
         }}
       >
-        <RestaurantMenuIcon />
         <RestaurantIcon />
+        <RestaurantMenuIcon />
         <TapasIcon />
       </Box>
       <Typography
         variant={isSmallScreen ? "subtitle1" : "h6"}
         sx={{
           mb: 2,
+          p: 2,
           textAlign: "center",
           fontWeight: "bold",
           color: "#006666",
