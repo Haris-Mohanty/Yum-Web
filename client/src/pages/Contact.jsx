@@ -38,10 +38,11 @@ const Contact = () => {
       <Box sx={{ mt: 8, p: 4, mb: 4 }}>
         <Box sx={{ mb: 3 }}>
           <Typography
-            variant={isSmallScreen ? "h5" : "h4"}
+            variant="h4"
             component="h1"
             fontWeight={"bold"}
             fontFamily={"verdana"}
+            color={"#006666"}
           >
             Contact Us
           </Typography>
