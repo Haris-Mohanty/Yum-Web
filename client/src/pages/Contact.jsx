@@ -35,10 +35,10 @@ const Contact = () => {
   return (
     <Layout>
       <ToastContainer />
-      <Box sx={{ mt: 8, p: 4, mb: 6 }}>
-        <Box>
+      <Box sx={{ mt: 8, p: 4, mb: 4 }}>
+        <Box sx={{ mb: 3 }}>
           <Typography
-            variant="h4"
+            variant={isSmallScreen ? "h5" : "h4"}
             component="h1"
             fontWeight={"bold"}
             fontFamily={"verdana"}
@@ -46,9 +46,12 @@ const Contact = () => {
             Contact Us
           </Typography>
         </Box>
-        <Box sx={{ width: "40%", m: "auto", p: 3 }}>
+        <Box sx={{ width: isSmallScreen ? "100%" : "40%", m: "auto", p: 3 }}>
           <form onSubmit={handleSubmit}>
-            <Typography variant="h5" sx={{ ml: 19, color: "#006666" }}>
+            <Typography
+              variant={isSmallScreen ? "h6" : "h5"}
+              sx={{ ml: isSmallScreen ? 2 : 19, color: "#006666" }}
+            >
               Write a message to us!
             </Typography>
             <TextField
@@ -85,7 +88,7 @@ const Contact = () => {
               variant="contained"
               sx={{
                 bgcolor: "#006666",
-                width: "20%",
+                width: isSmallScreen ? "100%" : "20%",
                 display: "flex",
                 float: "right",
                 mt: 2,
