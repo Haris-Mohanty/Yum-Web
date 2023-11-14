@@ -1,13 +1,15 @@
 import React from "react";
 import Layout from "../components/Layout/Layout";
-import { Box, TextField, Typography } from "@mui/material";
+import { Box, Button, TextField, Typography } from "@mui/material";
 
 const Contact = () => {
   return (
     <Layout>
       <Box sx={{ mt: 8, p: 4 }}>
-        <Box>
-          <Typography>Contact Us</Typography>
+        <Box sx={{ m: "auto" }}>
+          <Typography variant="h4" component="h1">
+            Contact Us
+          </Typography>
         </Box>
         <Box sx={{ width: "40%", m: "auto" }}>
           <form>
@@ -21,6 +23,13 @@ const Contact = () => {
               label="Write your message"
               required
             />
+            <Button
+              type="submit"
+              variant="contained"
+              sx={{ bgcolor: "#006666" }}
+            >
+              Send
+            </Button>
           </form>
         </Box>
       </Box>
