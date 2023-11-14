@@ -1,12 +1,15 @@
-import React from 'react'
-import Layout from '../components/Layout/Layout'
+import React from "react";
+import Layout from "../components/Layout/Layout";
+import { Box, Typography } from "@mui/material";
 
 const Contact = () => {
   return (
     <Layout>
-      <h1>Contact Page</h1>
+      <Box sx={{ mt: 8 }}>
+        <Typography>Contact Us</Typography>
+      </Box>
     </Layout>
-  )
-}
+  );
+};
 
-export default Contact
+export default Contact;
