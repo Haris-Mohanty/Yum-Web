@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Layout from "../components/Layout/Layout";
 import { Box, Button, TextField, Typography } from "@mui/material";
 import "react-toastify/dist/ReactToastify.css";
-import {ToastContainer,} from 'react-toastify'
+import { ToastContainer, toast } from "react-toastify";
 
 const Contact = () => {
   const [inputs, setInputs] = useState({
@@ -19,11 +19,12 @@ const Contact = () => {
     e.preventDefault();
 
     setInputs({ name: "", email: "", message: "" });
+    toast.success("Message sents successfully!");
   };
 
   return (
     <Layout>
-      
+      <ToastContainer />
       <Box sx={{ mt: 8, p: 4, mb: 6 }}>
         <Box>
           <Typography
