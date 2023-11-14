@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import Layout from "../components/Layout/Layout";
 import { Box, Button, TextField, Typography } from "@mui/material";
+import "react-toastify/dist/ReactToastify.css";
+import {ToastContainer,} from 'react-toastify'
 
 const Contact = () => {
   const [inputs, setInputs] = useState({
@@ -16,13 +18,12 @@ const Contact = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    
-
     setInputs({ name: "", email: "", message: "" });
   };
 
   return (
     <Layout>
+      
       <Box sx={{ mt: 8, p: 4, mb: 6 }}>
         <Box>
           <Typography
