@@ -9,6 +9,18 @@ const Contact = () => {
     message: "",
   });
 
+  const handleChange = (e) => {
+    setInputs({ ...inputs, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    
+
+    setInputs({ name: "", email: "", message: "" });
+  };
+
   return (
     <Layout>
       <Box sx={{ mt: 8, p: 4, mb: 6 }}>
@@ -23,13 +35,14 @@ const Contact = () => {
           </Typography>
         </Box>
         <Box sx={{ width: "40%", m: "auto", p: 3 }}>
-          <form>
+          <form onSubmit={handleSubmit}>
             <Typography variant="h5" sx={{ ml: 19, color: "#006666" }}>
               Write a message to us!
             </Typography>
             <TextField
               name="name"
               value={inputs.name}
+              onChange={handleChange}
               fullWidth
               margin="normal"
               label="Enter Your Name"
@@ -38,6 +51,7 @@ const Contact = () => {
             <TextField
               name="email"
               value={inputs.email}
+              onChange={handleChange}
               fullWidth
               margin="normal"
               label="Enter Your Email"
@@ -46,6 +60,7 @@ const Contact = () => {
             <TextField
               name="message"
               value={inputs.message}
+              onChange={handleChange}
               fullWidth
               multiline
               rows={4}
