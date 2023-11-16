@@ -11,23 +11,58 @@ import {
   CardMedia,
   IconButton,
   Modal,
+  Snackbar,
   Typography,
 } from "@mui/material";
 import Facebook from "@mui/icons-material/Facebook";
 import Twitter from "@mui/icons-material/Twitter";
 import Instagram from "@mui/icons-material/Instagram";
+import FileCopy from "@mui/icons-material/FileCopy";
 
 const Menu = () => {
   const [modalOpen, setModalOpen] = useState(false);
   const [copiedLink, setCopiedLink] = useState("");
+  const [isCopySuccess, setIsCopySuccess] = useState(false);
 
-  const openSocialMediaModal = (link) => {
-    setCopiedLink(link);
+  //******** OPEN MODAL LINK COPY *************/
+  const openSocialMediaModal = () => {
+    setCopiedLink(window.location.href);
     setModalOpen(true);
   };
 
+  //*********** MODAL CLOSE ***********/
   const handleCloseModal = () => {
     setModalOpen(false);
+  };
+
+  //*********** COPY ICON CLICK ***********/
+  const handleCopyLink = () => {
+    try {
+      navigator.clipboard.writeText(copiedLink);
+      setIsCopySuccess(true);
+    } catch (err) {
+      console.error("Unable to copy text: ", err);
+      setIsCopySuccess(false);
+    }
+  };
+
+  const handleRedirect = (platform) => {
+    const socialMediaLink = getSocialMediaLink(platform);
+    const message = "Check out this awesome menu item!";
+    window.open(`${socialMediaLink}${copiedLink}&message=${message}`, "_blank");
+  };
+
+  const getSocialMediaLink = (platform) => {
+    switch (platform) {
+      case "facebook":
+        return "https://www.facebook.com/sharer/sharer.php?u=";
+      case "twitter":
+        return "https://twitter.com/";
+      case "instagram":
+        return "https://www.instagram.com/";
+      default:
+        return "";
+    }
   };
 
   return (
@@ -81,6 +116,9 @@ const Menu = () => {
               >
                 Share
               </Button>
+              <IconButton aria-label="copy link" onClick={handleCopyLink}>
+                <FileCopy sx={{ fontSize: 18 }} />
+              </IconButton>
             </CardActions>
           </Card>
         ))}
@@ -110,16 +148,24 @@ const Menu = () => {
             Share on Social Media
           </Typography>
           <IconButton>
-            <Facebook />
+            <Facebook onClick={() => handleRedirect("facebook")} />
           </IconButton>
           <IconButton>
-            <Twitter />
+            <Twitter onClick={() => handleRedirect("twitter")} />
           </IconButton>
           <IconButton>
-            <Instagram />
+            <Instagram onClick={() => handleRedirect("instagram")} />
           </IconButton>
         </Box>
       </Modal>
+
+      {/* Copy Link Notification */}
+      <Snackbar
+        open={isCopySuccess}
+        autoHideDuration={2000}
+        onClose={() => setIsCopySuccess(false)}
+        message="Link copied to clipboard!"
+      />
     </Layout>
   );
 };
