@@ -18,6 +18,7 @@ import Facebook from "@mui/icons-material/Facebook";
 import Twitter from "@mui/icons-material/Twitter";
 import Instagram from "@mui/icons-material/Instagram";
 import FileCopy from "@mui/icons-material/FileCopy";
+import Close from "@mui/icons-material/Close";
 
 const Menu = () => {
   const [modalOpen, setModalOpen] = useState(false);
@@ -46,12 +47,14 @@ const Menu = () => {
     }
   };
 
+  //*********** REDIRECT  ***********/
   const handleRedirect = (platform) => {
     const socialMediaLink = getSocialMediaLink(platform);
     const message = "Check out this awesome menu item!";
     window.open(`${socialMediaLink}${copiedLink}&message=${message}`, "_blank");
   };
 
+  //*********** GET LINK AND PASS  ***********/
   const getSocialMediaLink = (platform) => {
     switch (platform) {
       case "facebook":
@@ -124,7 +127,7 @@ const Menu = () => {
         ))}
       </Box>
 
-      {/* Modal */}
+      {/********** Modal **********/}
       <Modal
         open={modalOpen}
         onClose={handleCloseModal}
@@ -140,26 +143,38 @@ const Menu = () => {
             width: 300,
             bgcolor: "background.paper",
             boxShadow: 24,
-            p: 2,
+            p: 4,
             textAlign: "center",
           }}
         >
+          <IconButton
+            aria-label="close"
+            sx={{
+              position: "absolute",
+              top: 5,
+              right: 5,
+            
+            }}
+            onClick={handleCloseModal}
+          >
+            <Close />
+          </IconButton>
           <Typography variant="h6" id="modal-title" gutterBottom>
             Share on Social Media
           </Typography>
-          <IconButton>
-            <Facebook onClick={() => handleRedirect("facebook")} />
+          <IconButton onClick={() => handleRedirect("facebook")}>
+            <Facebook />
           </IconButton>
-          <IconButton>
-            <Twitter onClick={() => handleRedirect("twitter")} />
+          <IconButton onClick={() => handleRedirect("twitter")}>
+            <Twitter />
           </IconButton>
-          <IconButton>
-            <Instagram onClick={() => handleRedirect("instagram")} />
+          <IconButton onClick={() => handleRedirect("instagram")}>
+            <Instagram />
           </IconButton>
         </Box>
       </Modal>
 
-      {/* Copy Link Notification */}
+      {/********** Copy Link Notification **********/}
       <Snackbar
         open={isCopySuccess}
         autoHideDuration={2000}
