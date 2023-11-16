@@ -20,6 +20,19 @@ export const MenuList = [
     image: Burger,
     price: 155,
   },
+
+  {
+    name: "Soup",
+    desc: "Sip into comfort with our soul-soothing soup, a warm blend of fresh ingredients for a flavorful experience.",
+    image: Soup,
+    price: 145,
+  },
+  {
+    name: "Pizza",
+    desc: "Indulge in our pizza perfection—crafted with premium ingredients for a symphony of flavors in every slice.",
+    image: Pizza,
+    price: 255,
+  },
   {
     name: "Chiken Tika Masala",
     desc: "Experience the exquisite taste of Chicken Tikka Masala, a culinary masterpiece featuring tender chicken in a luscious.",
@@ -38,22 +51,11 @@ export const MenuList = [
     image: FishCurry,
     price: 65,
   },
-  {
-    name: "Pizza",
-    desc: "Indulge in our pizza perfection—crafted with premium ingredients for a symphony of flavors in every slice.",
-    image: Pizza,
-    price: 255,
-  },
+
   {
     name: "Samosa",
     desc: "Crunch into our Samosas—golden parcels filled with spiced potatoes and peas, a crispy delight for your taste buds.",
     image: Samosa,
     price: 40,
-  },
-  {
-    name: "Soup",
-    desc: "Sip into comfort with our soul-soothing soup, a warm blend of fresh ingredients for a flavorful experience.",
-    image: Soup,
-    price: 145,
   },
 ];
