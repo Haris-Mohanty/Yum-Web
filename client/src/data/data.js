@@ -23,7 +23,7 @@ export const MenuList = [
 
   {
     name: "Soup",
-    desc: "Sip into comfort with our soul-soothing soup, a warm blend of fresh ingredients for a flavorful experience.",
+    desc: "Sip into comfort with our soul-soothing soup, a warm blend of fresh ingredients for a flavorful and delicious experience.",
     image: Soup,
     price: 145,
   },
@@ -41,13 +41,13 @@ export const MenuList = [
   },
   {
     name: "Dosa",
-    desc: "Delight in crispy perfection with our Dosa—thin, savory crepes filled with deliciously spiced fillings.",
+    desc: "Delight in crispy perfection with our Dosa thin, savory crepes filled with deliciously spiced fillings and more.",
     image: Dosa,
     price: 79,
   },
   {
     name: "Fish Curry",
-    desc: "Savor the ocean's bounty in our Fish Curry—succulent fish simmered in a flavorful blend of spices.",
+    desc: "Savor the ocean's bounty in our Fish Curry—succulent fish simmered in a flavorful blend of spices and delicious experience.",
     image: FishCurry,
     price: 65,
   },
