@@ -91,7 +91,7 @@ const Menu = () => {
             <CardActionArea>
               <CardMedia
                 sx={{
-                  height: "370px",
+                  height: "300px",
                   transition: "transform 0.3s",
                   "&:hover": {
                     transform: "scale(1.05)",
@@ -130,7 +130,6 @@ const Menu = () => {
       {/********** Modal **********/}
       <Modal
         open={modalOpen}
-        onClose={handleCloseModal}
         aria-labelledby="modal-title"
         aria-describedby="modal-description"
       >
@@ -153,11 +152,10 @@ const Menu = () => {
               position: "absolute",
               top: 5,
               right: 5,
-            
             }}
             onClick={handleCloseModal}
           >
-            <Close />
+            <Close sx={{ color: "red", fontSize:26 }} />
           </IconButton>
           <Typography variant="h6" id="modal-title" gutterBottom>
             Share on Social Media
