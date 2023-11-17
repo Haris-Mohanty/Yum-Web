@@ -11,7 +11,7 @@ import {
   useMediaQuery,
   useTheme,
 } from "@mui/material";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import logo from "../../Assets/logo.png";
 import "../../styles/HeaderStyles.css";
 import MenuIcon from "@mui/icons-material/Menu";
