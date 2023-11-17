@@ -16,8 +16,8 @@
   font-weight: 600;
 }
 
-.active {
-  color: #033232;
-  font-weight: bold;
+.nav-menu .active {
+  color: #3f5d5d;
+  font-weight: bolder;
   font-size: 1.4rem;
 }
